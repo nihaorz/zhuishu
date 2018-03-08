@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title + ' - ' + chapterName}"></title>
+    <link rel="stylesheet" href="https://qidian.gtimg.com/c/=/qd/css/lbfUI/css/icon.a578d.css,/qd/css/lbfUI/css/Drag.41d31.css,/qd/css/lbfUI/css/Checkbox.ef549.css,/qd/css/reset.ddecf.css,/qd/css/global.d41d8.css,/qd/css/font.089a4.css,/qd/css/module.429f5.css,/qd/css/footer.feb73.css,/qd/css/read.a14a4.css,/qd/css/layout.5de0f.css,/qd/css/qd_popup.7e65f.css,/qd/css/book_popup.18f47.css,/qd/css/vote_popup.3844d.css"/>
+</head>
+<body>
+<div class="wrap">
+    <div class="read-header" id="readHeader">
+        <div class="wrap-center cf">
+            <div class="left-nav fl">
+                <div class="logo">
+                    <a class="logo-ico" href="javascript:"></a>
+                </div>
+                <ul>
+                    <li class="site">
+                        <a class="pin-logo" href="http://www.qidian.com" target="_blank"><span></span></a>
+                    </li>
+                    <li class="app">
+                        <cite>手机阅读</cite>
+                    </li>
+                    <li id="j_nearRead">
+                        <cite>最近阅读</cite>
+                    </li>
+                    <li class="quick-nav">
+                        <cite><i class="iconfont">&#xe661;</i>快速导航</cite>
+                    </li>
+                </ul>
+            </div>
+            <div class="read-login fr">
+                <ul>
+                    <li id="min-search">
+                        <form action="//www.qidian.com/search" method="get" target="_blank">
+                            <input class="submit-input" type="submit" id="searchSubmit">
+                            <input id="pin-input" class="pin-input hide" name="kw" type="text" placeholder="">
+                            <label id="pin-search" for="searchSubmit"><em class="iconfont"></em></label>
+                        </form>
+                    </li>
+                    <li class="line"></li>
+                    <li class="sign-out">
+                        <a id="pin-login" href="javascript:">登录</a>
+                        <a class="reg" href="javascript:">注册</a>
+                    </li>
+                    <li><a href="javascript:">充值</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="crumbs-nav">
+        <a href="//www.qidian.com" target="_blank">首页</a><em class="iconfont">&#xe621;</em>
+        <a href="//www.qidian.com/xianxia" target="_blank" id="j_chanId">仙侠</a><em class="iconfont">&#xe621;</em>
+        <a href="//www.qidian.com/all?chanId=22&subCateId=44" target="_blank">幻想修仙</a><em class="iconfont">&#xe621;</em>
+        <a class="act" target="_blank" id="bookImg" th:text="${title}" th:href="${url}">一言通天</a>
+    </div>
+    <div class="read-main-wrap font-family01" style="font-size:18px" id="j_readMainWrap">
+        <div id="j_chapterBox">
+            <div class="text-wrap">
+                <div class="main-text-wrap">
+                    <div class="text-head">
+                        <div class="guide-box">
+                            <cite></cite>
+                            <p>点击书签后，可收藏每个章节的书签，“阅读进度”可以在个人中心书架里查看</p>
+                        </div>
+                        <a class="book-mark" href="javascript:" title="书签"></a>
+                        <h3 class="j_chapterName" th:text="${chapterName}"></h3>
+                        <div class="text-info cf">
+                            <div class="info fl">
+                                <a href="//book.qidian.com/info/1003715102" target="_blank"><em class="iconfont">&#xe60c;</em><span th:text="${title}"></span></a>
+                                <a href="//me.qidian.com/authorIndex.aspx?id=4637841" target="_blank"><em class="iconfont">&#xe650;</em><span th:text="${author}"></span></a>
+                                <i><em class="iconfont">&#xe64f;</em><span class="j_chapterWordCut" th:text="${wordCount}"></span>字</i>
+                                <i><em class="iconfont">&#xe653;</em><span class="j_updateTime">1970.01.01 00:00:00</span></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="read-content j_readContent">
+                        <p th:each="content : ${chapterBody}" th:text="${content}"></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chapter-control dib-wrap">
+            <a id="j_chapterPrev" href="//vipreader.qidian.com/chapter/1003715102/399813123" th:href="${prev['link']}" th:title="${prev['title']}">上一章</a><span>|</span>
+            <a href="/" target="_blank">目录</a><span>|</span>
+            <a id="j_chapterNext" href="//vipreader.qidian.com/chapter/1003715102/399916241" th:href="${next['link']}" th:title="${next['title']}">下一章</a>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/navigation.js"></script>
+</body>
+</html>

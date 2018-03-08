@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="/css/pure-min.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<h3 th:text="${title}"></h3>
+<div class="content">
+    <p th:each="content : ${body}" th:text="${content}"></p>
+</div>
+<div class="nav">
+    <a id="prevChapter" th:if="${prev}" th:href="${prev['link']}" th:title="${prev['title']}">上一章</a>
+    <a id="nextChapter" th:if="${next}" th:href="${next['link']}" th:title="${next['title']}">下一章</a>
+</div>
+</body>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/navigation.js"></script>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="/css/pure-min.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<h3 th:text="${title}"></h3>
+<div class="pure-g">
+    <div class="pure-u-1-5" th:each="chapter : ${data}">
+        <a target="_blank" th:href="${chapter.link}" th:text="${chapter.title}"></a>
+    </div>
+</div>
+</body>
+</html>
