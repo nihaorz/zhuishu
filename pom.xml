@@ -11,6 +11,10 @@
 	<name>zhuishu</name>
 	<description>Demo project for Spring Boot</description>
 
+	<scm>
+		<connection>git@github.com:nihaorz/zhuishu.git</connection>
+	</scm>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
